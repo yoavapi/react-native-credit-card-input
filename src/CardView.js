@@ -66,6 +66,7 @@ const s = StyleSheet.create({
     position: "absolute",
     top: 73,
     right: 30,
+
   },
   cvc: {
     fontSize: 16,
@@ -144,8 +145,8 @@ export default class CardView extends Component {
                 numberOfLines={1}>
                 { !name ? placeholder.name : name.toUpperCase() }
               </Text>
-              <Text style={[s.baseText, { fontFamily }, s.expiryLabel, s.placeholder, focused === "expiry" && s.focused]}>
-                MONTH/YEAR
+              <Text style={[s.baseText, { fontFamily }, s.expiryLabel, s.placeholder, focused === "expiry" && s.focused, {fontWeight:"bold", right:35,fontSize:9}]}>
+                 שנה/חודש
               </Text>
               <Text style={[s.baseText, { fontFamily }, s.expiry, !expiry && s.placeholder, focused === "expiry" && s.focused]}>
                 { !expiry ? placeholder.expiry : expiry }
@@ -157,7 +158,7 @@ export default class CardView extends Component {
           </ImageBackground>
           <ImageBackground style={[BASE_SIZE, s.cardFace, transform]}
             source={imageBack}>
-              <Text style={[s.baseText, s.cvc, !cvc && s.placeholder, focused === "cvc" && s.focused]}>
+              <Text style={[s.baseText, s.cvc, !cvc && s.placeholder, focused === "cvc" && s.focused, {color:"black"}]}>
                 { !cvc ? placeholder.cvc : cvc }
               </Text>
           </ImageBackground>
